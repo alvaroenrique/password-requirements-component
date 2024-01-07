@@ -1,10 +1,10 @@
 # Password Requirements Component
 
-This is a reusable password requirements component built with React.
+This is a reusable password validation React component that aims to standardize password validations across various front-end applications while providing the flexibility for customization as per different application requirements.
 
 ## Installation
 
-To install this component in your project, run:
+To integrate the PasswordRequirements component into your project, execute:
 
 ```bash
 npm install password-requirements-component
@@ -12,27 +12,27 @@ npm install password-requirements-component
 
 ## Usage
 
-First, import the component:
+Firstly, import the component:
 
 ```bash
 import PasswordRequirements from 'password-requirements-component';
 ```
 
-(Optional) This component has a default style. To use it, import the style:
+To apply default styles, import:
 
 ```bash
 import 'password-requirements-component/styles';
 ```
 
-Then, you can use it in your JSX code:
+Incorporate the component in your JSX as follows:
 
 ```JSX
 <PasswordRequirements />
 ```
 
-## Props
+## Proprietary Customization
 
-The `PasswordRequirements` component accepts the following props:
+The `PasswordRequirements` component is designed with adaptability in mind, allowing you to customize titles, input fields, and validations by using these props:
 
 ```typescript
 interface Props {
@@ -53,19 +53,20 @@ interface Props {
 }
 ```
 
-You can use these props to customize the title, input field, and validations. For example:
+Here's a custom setup example:
 
 ```JSX
 <PasswordRequirements
   titleConfig={{ text: "Custom Title", customClass: "custom-title" }}
-  inputConfig={{ placeholder: "Custom Placeholder", customClass: "custom-input" }}
+  inputConfig={{ placeholder: "Enter Secure Password", customClass: "custom-input" }}
   customValidations={[
-    { text: "Must contain an emoji", regex: /[!😄👍*]/, status: false }
+    { text: "Must contain an emoji", regex: /[!😄👍*]/, status: false },
+    // Add more custom validations as required
   ]}
 />
 ```
 
-This will render a PasswordRequirements component with a custom title and placeholder, and two custom validations.
+This will render your PasswordRequirements component tailored with a custom title, placeholder, and validations, such as emoji inclusion.
 
 This component has these validations as default:
 
@@ -73,33 +74,19 @@ This component has these validations as default:
 - Has one or more of these special characters: !@#$%^&\*
 - Has an uppercase letter
 
-## Development
+## Development and Testing
 
-Go to the app directory:
-
-```bash
-cd app
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-To start the development server, run:
-
-```bash
-npm run dev
-```
+Start the development server with `npm run dev`
 
 ![Local dev screenshot](https://d48uab9n35khj.cloudfront.net/password-requirements-component/dev.png)
 
-To build the component for production, run:
+and build for production using `npm run build`.
 
-```bash
-npm run build
-```
+Test cases can be executed with `npm run test`.
+
+It will open a browser window with the test results using Vitest UI.
+
+![Vitest screenshot](https://d48uab9n35khj.cloudfront.net/password-requirements-component/test.png)
 
 To publish the component to NPM, run:
 
@@ -107,31 +94,12 @@ To publish the component to NPM, run:
 npm publish
 ```
 
-## Testing
+## Technical Ecosystem
 
-This project uses Vitest for testing.
-
-To run the tests, use the following command:
-
-```bash
-npm run test
-```
-
-It will open a browser window with the test results using Vitest UI.
-
-![Vitest screenshot](https://d48uab9n35khj.cloudfront.net/password-requirements-component/test.png)
-
-# Technical Details
-
-This component is built with React and TypeScript. It uses Vite for development and build processes.
-
-The component is published as a package with both CommonJS (dist/index.umd.js) and ES Module (dist/index.es.js) builds. Type declarations are included in dist/index.d.ts.
-
-The component's styles are included in dist/style.css.
-
-For testing, this component uses Vitest with react-testing-library.
-
-NPM public package URL: https://www.npmjs.com/package/password-requirements-component
+- React & TypeScript: Offers safe typing and state-of-the-art component modeling.
+- Vite: Modern and fast build tooling is utilized.
+- ES Module & CommonJS: Compatible with diverse JavaScript environments.
+- NPM Package: Find us at https://www.npmjs.com/package/password-requirements-component.
 
 ## Using the component in a Next.js app
 
